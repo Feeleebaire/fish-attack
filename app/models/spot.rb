@@ -3,8 +3,6 @@ class Spot < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   #validations
   validates :name, presence: true
-  validates :latitude, presence: true
-  validates :longitude, presence: true
-  validates :adresse, presence: true
+  validates :addresse, presence: true
   #associtions
 end
