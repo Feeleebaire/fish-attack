@@ -4,5 +4,5 @@ class Spot < ApplicationRecord
   #validations
   validates :name, presence: true
   validates :addresse, presence: true
-  #associtions
+  #associations
 end
