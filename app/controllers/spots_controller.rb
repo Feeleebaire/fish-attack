@@ -29,5 +29,4 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(:name, :addresse, :latitude, :longitude)
   end
 
-
 end
