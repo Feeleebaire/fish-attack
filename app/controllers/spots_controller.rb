@@ -20,7 +20,7 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
-    @spot.save
+    redirect_to spots_path if @spot.save
   end
 
   private
