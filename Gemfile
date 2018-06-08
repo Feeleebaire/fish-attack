@@ -10,6 +10,8 @@ gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 gem "geocoder"
+gem 'forest_liana'
+
 
 
 gem 'autoprefixer-rails'
