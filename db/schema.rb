@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_08_141335) do
+ActiveRecord::Schema.define(version: 2018_06_08_115909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,17 +19,6 @@ ActiveRecord::Schema.define(version: 2018_06_08_141335) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "leurres", force: :cascade do |t|
-    t.bigint "leurre_type_id"
-    t.bigint "type_fish_id"
-    t.string "name"
-    t.float "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["leurre_type_id"], name: "index_leurres_on_leurre_type_id"
-    t.index ["type_fish_id"], name: "index_leurres_on_type_fish_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -70,6 +59,4 @@ ActiveRecord::Schema.define(version: 2018_06_08_141335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "leurres", "leurre_types"
-  add_foreign_key "leurres", "type_fishes"
 end
