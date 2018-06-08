@@ -1,0 +1,2 @@
+class LeurreType < ApplicationRecord
+end

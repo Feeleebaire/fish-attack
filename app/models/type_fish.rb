@@ -1,0 +1,2 @@
+class TypeFish < ApplicationRecord
+end
