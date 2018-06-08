@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_08_141335) do
+ActiveRecord::Schema.define(version: 2018_06_08_151027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2018_06_08_141335) do
     t.datetime "updated_at", null: false
     t.index ["leurre_type_id"], name: "index_leurres_on_leurre_type_id"
     t.index ["type_fish_id"], name: "index_leurres_on_type_fish_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.bigint "type_fishing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_sessions_on_spot_id"
+    t.index ["type_fishing_id"], name: "index_sessions_on_type_fishing_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -72,4 +83,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_141335) do
 
   add_foreign_key "leurres", "leurre_types"
   add_foreign_key "leurres", "type_fishes"
+  add_foreign_key "sessions", "spots"
+  add_foreign_key "sessions", "type_fishings"
+  add_foreign_key "sessions", "users"
 end
